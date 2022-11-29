@@ -1,4 +1,6 @@
 (() => {
+    
+    // No aplicando el principio de responsabilidad única
 
     type Gender = 'M' | 'F';
 
@@ -19,8 +21,48 @@
             public gender: Gender, 
             public birthdate: Date) {}
     }
+    class User extends Person {
+        constructor(
+            public email: string,
+            public role: string,
+            private lastAcces: Date,
+            name: string,
+            gender: Gender,
+            birthdate: Date,
+        ) {
+            super(name, gender, birthdate);
+        }
+        checkCredentials() {
+            return true;
+        }
+    }
 
-    const newPerson = new Person('Fernando', 'M', new Date('1985-10-2000'));
-    console.log(newPerson);
-    
+    class UserSetting extends User {
+        constructor(
+            public workingDirectory: string,
+            public lastOpenFolder: string,
+            email: string,
+            role: string,
+            lastAcces: Date,
+            name: string,
+            gender: Gender,
+            birthdate: Date,
+        ) {
+            super(email, role, lastAcces, name, gender, birthdate);
+        }
+    }
+
+    const userSetting = new UserSetting(
+        '/usr/home',
+        '/home',
+        'email@email',
+        'Admin',
+        new Date('1998-10-21'),
+        'prueba',
+        'M',
+        new Date('1998-10-21')
+    );
+
+    console.log(userSetting);
+
 })();
