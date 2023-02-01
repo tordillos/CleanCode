@@ -1,4 +1,7 @@
 
+export class Car {
+
+}
 
 export class Tesla {
 
@@ -28,6 +31,14 @@ export class Toyota {
 }
 
 export class Honda {
+
+    constructor( private numberOfSeats: number ) {}
+
+    getNumberOfHondaSeats() {
+        return this.numberOfSeats;
+    }
+}
+export class Volvo {
 
     constructor( private numberOfSeats: number ) {}
 
