@@ -1,48 +1,82 @@
 
-export class Car {
+// Trabajando con herencia y abastracción
+// Buscamos que las clases tengan todos los métodos y propiedades que la clase abstracta va a obligarles a tener
+export abstract class Car {
+
+    // getNumberOfTeslaSeats():number {
+    //     throw Error('Method not implemented');
+    // }
+    abstract getNumberOfSeats(): number;
 
 }
 
-export class Tesla {
+export class Tesla extends Car {
+    
+    constructor( private numberOfSeats: number ) {
+        // Generar el construcor de la clase Car
+        super();
+    }
+    
+    getNumberOfSeats(): number {
+        return this.numberOfSeats;
+    }
 
-    constructor( private numberOfSeats: number ) {}
+}
 
-    getNumberOfTeslaSeats() {
+export class Audi extends Car {
+
+    constructor( private numberOfSeats: number ) {
+        // Generar el construcor de la clase Car
+        super();
+    }
+    
+    getNumberOfSeats(): number {
         return this.numberOfSeats;
     }
 }
 
-export class Audi {
+export class Toyota extends Car {
 
-    constructor( private numberOfSeats: number ) {}
-
-    getNumberOfAudiSeats() {
+    constructor( private numberOfSeats: number ) {
+        // Generar el construcor de la clase Car
+        super();
+    }
+    
+    getNumberOfSeats(): number {
         return this.numberOfSeats;
     }
 }
 
-export class Toyota {
+export class Honda extends Car {
 
-    constructor( private numberOfSeats: number ) {}
-
-    getNumberOfToyotaSeats() {
+    constructor( private numberOfSeats: number ) {
+        // Generar el construcor de la clase Car
+        super();
+    }
+    
+    getNumberOfSeats(): number {
         return this.numberOfSeats;
     }
 }
+export class Volvo extends Car {
 
-export class Honda {
-
-    constructor( private numberOfSeats: number ) {}
-
-    getNumberOfHondaSeats() {
+    constructor( private numberOfSeats: number ) {
+        // Generar el construcor de la clase Car
+        super();
+    }
+    
+    getNumberOfSeats(): number {
         return this.numberOfSeats;
     }
 }
-export class Volvo {
+export class Ford extends Car {
 
-    constructor( private numberOfSeats: number ) {}
-
-    getNumberOfHondaSeats() {
+    constructor( private numberOfSeats: number ) {
+        // Generar el construcor de la clase Car
+        super();
+    }
+    
+    getNumberOfSeats(): number {
         return this.numberOfSeats;
     }
 }
